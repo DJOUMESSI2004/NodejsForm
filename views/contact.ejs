@@ -1,0 +1,48 @@
+<%- include('navbar') -%>
+
+<div class="container mt-5 mb-5">
+    <h1 class="text-primary text-center"><b>Node.JS Server Side Validation Form </b></h1>
+    <div class="container mt-3 mb-3">
+        <div class="card-body">
+            <form action="/contact" method="post">
+                <div class="mb-3">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" class="form-control">
+                    <% if (errors && errors.name) { %>
+                        <span class="text-danger"><%= errors.name.msg %></span>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <label for="surname">Surname</label>
+                    <input type="text" name="surname" id="surname" class="form-control">
+                    <% if(errors && errors.surname){ %>
+                        <span class="text-danger"><%= errors.surname.msg %></span>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" class="form-control">
+                    <% if(errors && errors.phone){ %>
+                        <span class="text-danger"><%= errors.phone.msg %></span>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control">
+                    <% if(errors && errors.email){ %>
+                        <span class="text-danger"><%= errors.email.msg %></span>
+                    <% } %>
+                </div>
+                <div class="mb-3">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" class="form-control"></textarea>
+                    <% if(errors && errors.message){ %>
+                        <span class="text-danger"><%= errors.message.msg %></span>
+                    <% } %>
+                </div>
+                <!-- Form Submission Button -->
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

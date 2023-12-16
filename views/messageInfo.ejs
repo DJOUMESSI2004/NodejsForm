@@ -1,0 +1,22 @@
+<%- include('navbar') -%>
+
+<div class="container mt-5 md-5 bg-success">
+    <h1 class="text-light text-center">All Submitted Messages</h1> <!-- Updated text for consistency -->
+</div>
+<div class="container mt-3 md-3">
+    <ul style="list-style: none;">
+        <% for (let data of Msgs) { %>
+            <li>
+                <div class="container mt-3 md-3 bg-body-tertiary">
+                    <h5><%= data.name %></h5><br>
+                    <h5><%= data.surname %></h5><br>
+                    <h5><%= data.phone %></h5><br>
+                    <h5><%= data.email %></h5>
+                    <p>
+                        <h5><%= data.message %></h5>
+                    </p>
+                </div>
+            </li>
+        <% } %>
+    </ul>
+</div>
